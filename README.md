@@ -15,7 +15,7 @@ The is to test Spring Batch and Neo4J performance (compared to an RDBMS).
 
 # CSV Files
 
-Version 1.0.8 of ESCO are used.
+Version 1.0.8 of ESCO is used.
 
 | File                               | Class                     |
 |------------------------------------|---------------------------|
