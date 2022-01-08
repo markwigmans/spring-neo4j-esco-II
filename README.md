@@ -9,6 +9,10 @@ makes loading data into Neo4J faster. It doesn't seem to make a big difference.
 
 The is to test Spring Batch and Neo4J performance (compared to an RDBMS).
 
+## System Overview
+
+![System Overview](system-overview.png)
+
 # CSV Files
 
 Version 1.0.8 of ESCO are used.
