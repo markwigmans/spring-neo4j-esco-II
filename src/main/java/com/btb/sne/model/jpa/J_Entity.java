@@ -1,13 +1,9 @@
 package com.btb.sne.model.jpa;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "Entity")
@@ -15,9 +11,11 @@ import java.util.Set;
 @Setter
 @ToString
 @NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class J_Entity {
 
     @Id
+    @EqualsAndHashCode.Include
     private String conceptUri;
 
     @Version
@@ -54,20 +52,6 @@ public class J_Entity {
     @ManyToMany(fetch = FetchType.LAZY)
     @ToString.Exclude
     private Set<J_Entity> optionals = new HashSet<>();
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(Objects.requireNonNull(conceptUri, "conceptUri must be non null"));
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        J_Entity that = (J_Entity) o;
-        return Objects.equals(conceptUri, that.conceptUri);
-    }
-
 }
 
 
